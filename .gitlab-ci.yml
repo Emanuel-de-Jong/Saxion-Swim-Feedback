@@ -1,0 +1,11 @@
+stages:         
+  - test
+
+unit-test:   
+  stage: test
+  image: mcr.microsoft.com/dotnet/sdk:6.0
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "main"'
+  script:
+    - dotnet restore Swim-Feedback/Swim-Feedback-Tests/Swim-Feedback-Tests.csproj
+    - dotnet test Swim-Feedback/Swim-Feedback-Tests/Swim-Feedback-Tests.csproj

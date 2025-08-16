@@ -1,0 +1,130 @@
+﻿.role-column > a > i.fa-regular {
+	font-size: 24px;
+	padding-left: 16px;
+}
+
+.password-column > a > i.fa-regular {
+	font-size: 24px;
+	padding-left: 26px;
+}
+
+.list-group-item {
+	height: 45px;
+}
+
+tr.user-row-active {
+	background: #9fcbff;
+}
+
+.user-container, .log-container {
+	margin-top: 20px;
+	overflow: scroll;
+
+}
+
+.container-wrapper {
+	border-radius: 10px;
+	padding: 10px;
+	min-height: 85vh;
+}
+
+table {
+	margin: 10px 0 10px 0;
+	background: white;
+}
+
+.user-row- {
+	border-bottom: 1px solid #d7d7d7;
+}
+
+#log-table {
+	font-size: 14px;
+}
+
+#log-table > tbody > tr > td {
+	min-width: 114px;
+}
+
+.student-data-table > thead > tr > th {
+	border: 1px solid #ededed;
+}
+
+.admin-import-data-popup > div > input {
+	background: white;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.admin-import-data-popup {
+	padding: 20px;
+}
+
+.admin-import-data-popup {
+	min-width: 550px;
+	max-width: fit-content;
+	height: fit-content;
+	background: #f9f9f9;
+	text-align: center;
+	display: flex;
+	border-radius: 10px;
+	flex-direction: column;
+	margin: 15% auto;
+}
+
+.reset-password-popup {
+	width: 550px;
+	height: fit-content;
+	background: #f9f9f9;
+	text-align: center;
+	display: flex;
+	border-radius: 10px;
+	flex-direction: column;
+	margin: 15% auto;
+}
+
+.reset-password-popup > form > .input-group > .forgot-password,
+.reset-password-popup > form > .input-group > .forgot-password-confirm
+{
+	width: 350px;
+	margin: 10px;
+}
+
+.admin-import-data-popup > h3 {
+	color: black;
+	font-size: 30px;
+	margin-top: -30px;
+}
+
+.reset-password-popup > h3 {
+	color: black;
+	margin-top: -25px;
+}
+
+.reset-password-popup > form > .popup-footer > .btn-primary {
+	font-size: 16px;
+	width: fit-content;
+	height: fit-content;
+	padding: 15px;
+	margin: 20px;
+}
+
+.admin-import-data-popup > i {
+	font-size: 30px;
+	color: #dc3545;
+	align-self: flex-end;
+	margin: 0 20px 0 20px;
+	z-index: 4;
+}
+
+.reset-password-popup > i
+{
+	font-size: 30px;
+	color: #dc3545;
+	align-self: flex-end;
+	margin: 20px 20px 0 20px;
+	z-index: 4;
+}
+
+.admin-dashboard-button-group {
+	margin-top: 10px;
+}

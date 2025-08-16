@@ -1,0 +1,33 @@
+﻿@page "/thanks/{SwimClassId:long}/{*EncodedTopic}"
+
+<AuthorizeView>
+<Authorized>
+<AuthorizeView Roles="Teacher, Admin">
+<Authorized Context="a">
+
+                <div class="thanks-container">
+                    <div class="trans-header statistics">
+                        <h1>Bedankt!</h1>
+                    </div>
+
+                    <h2>Bedankt voor je feedback!</h2>
+
+                    <img src="assets/imgs/thanks.png" />
+
+                    <div class="button-container">
+                        <a class="btn-secondary thanks-back-button" href="/student-select/@(SwimClassId)/@(EncodedTopic)"><i class="fa-solid fa-chevron-left"></i> Ga terug</a>
+                    </div>
+                </div>
+         
+
+
+</Authorized>
+<NotAuthorized Context="a">
+<CNotAuthorized />
+</NotAuthorized>
+</AuthorizeView>
+</Authorized>
+<NotAuthorized>
+<CRedirect URI="login" />
+</NotAuthorized>
+</AuthorizeView>

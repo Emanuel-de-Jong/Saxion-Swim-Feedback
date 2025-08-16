@@ -1,0 +1,126 @@
+﻿@page "/avatar-customize/{StudentId:long}"
+
+@using Swim_Feedback.Data
+
+<AuthorizeView>
+<Authorized>
+<AuthorizeView Roles="Teacher, Admin">
+<Authorized Context="a">
+    <div class="row">
+        <div class="col-5">
+            <canvas id="avatar-canvas"></canvas>
+
+            @if (avatar == null)
+            {
+                <p>Loading...</p>
+            }
+            else
+            {
+                <p>Skin:</p>
+                <img src="data:image/png;base64,@avatar.Skin.Image" style="max-width: 50px">
+
+                <p>FaceForm:</p>
+                <img src="data:image/png;base64,@avatar.FaceForm.Image" style="max-width: 50px">
+
+                <p>Hair:</p>
+                <img src="data:image/png;base64,@avatar.Hair.Image" style="max-width: 50px">
+
+                <p>Eyes:</p>
+                <img src="data:image/png;base64,@avatar.Eyes.Image" style="max-width: 50px">
+
+                <p>Mouth:</p>
+                <img src="data:image/png;base64,@avatar.Mouth.Image" style="max-width: 50px">
+
+                <p>BackgroundAccessory:</p>
+                <img src="data:image/png;base64,@avatar.BackgroundAccessory.Image" style="max-width: 50px">
+            }
+        </div>
+        <div class="col-5">
+            <div id="backgrounds" hidden="@hideBackgrounds">
+                @if (backgroundAccessories != null)
+                {
+                    <h3>Backgrounds:</h3>
+                    @foreach (Accessory accessory in backgroundAccessories)
+                    {
+                        <p>@accessory.Name</p>
+                    }
+                }
+            </div>
+
+            <div id="accessories" hidden="@hideAccessories">
+                @if (hairAccessories != null)
+                {
+                    <h3>HairAccessories:</h3>
+                    @foreach (Accessory accessory in hairAccessories)
+                    {
+                        <p>@accessory.Name</p>
+                    }
+                }
+
+                @if (eyePairAccessories != null)
+                {
+                    <h3>EyePairAccessories:</h3>
+                    @foreach (Accessory accessory in eyePairAccessories)
+                    {
+                        <p>@accessory.Name</p>
+                    }
+                }
+            </div>
+
+            <div id="body-parts" hidden="@hideBodyParts">
+                @if (eyePairs != null)
+                {
+                    <h3>EyePairs:</h3>
+                    @foreach (BodyPart bodyPart in eyePairs)
+                    {
+                        <p>@bodyPart.Name <button @onclick="() => SelectBodyPart(bodyPart)">Selecteer</button></p>
+                    }
+                }
+
+                @if (faceForms != null)
+                {
+                    <h3>FaceForms:</h3>
+                    @foreach (BodyPart bodyPart in faceForms)
+                    {
+                        <p>@bodyPart.Name</p>
+                    }
+                }
+
+                @if (hairs != null)
+                {
+                    <h3>Hairs:</h3>
+                    @foreach (BodyPart bodyPart in hairs)
+                    {
+                        <p>@bodyPart.Name</p>
+                    }
+                }
+            </div>
+
+            <div id="skins" hidden="@hideSkins">
+                @if (skins != null)
+                {
+                    <h3>Skins:</h3>
+                    @foreach (BodyPart bodyPart in skins)
+                    {
+                        <p>@bodyPart.Name</p>
+                    }
+                }
+            </div>
+        </div>
+        <div class="col-2">
+            <button @onclick='() => SwitchCategory("backgrounds")'>Backgrounds</button>
+            <button @onclick='() => SwitchCategory("accessories")'>Accessories</button>
+            <button @onclick='() => SwitchCategory("bodyParts")'>Body Parts</button>
+            <button @onclick='() => SwitchCategory("skins")'>Skins</button>
+        </div>
+    </div>
+</Authorized>
+<NotAuthorized Context="a">
+<CNotAuthorized />
+</NotAuthorized>
+</AuthorizeView>
+</Authorized>
+<NotAuthorized>
+<CRedirect URI="login" />
+</NotAuthorized>
+</AuthorizeView>

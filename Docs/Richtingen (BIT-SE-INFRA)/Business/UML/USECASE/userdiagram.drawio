@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net" modified="2023-06-12T11:02:29.405Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="fDosEGcpulrGx-zRl-Bl" version="21.3.7" type="device">
+  <diagram name="Pagina-1" id="BVOhtwqpokhVAo5StyDg">
+    <mxGraphModel dx="2074" dy="1148" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="FKzcfjY6P03bHJpakdAp-24" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="130" width="400" height="830" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-11" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FKzcfjY6P03bHJpakdAp-1" target="FKzcfjY6P03bHJpakdAp-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-1" value="Kinderen" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="370" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-20" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FKzcfjY6P03bHJpakdAp-2" target="FKzcfjY6P03bHJpakdAp-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-2" value="Zwemleraar" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="790" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-19" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FKzcfjY6P03bHJpakdAp-3" target="FKzcfjY6P03bHJpakdAp-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-3" value="Onderzoeker" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="720" y="810" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FKzcfjY6P03bHJpakdAp-8" target="FKzcfjY6P03bHJpakdAp-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FKzcfjY6P03bHJpakdAp-8" target="FKzcfjY6P03bHJpakdAp-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-8" value="Profiel selecteren" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="414" y="440" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FKzcfjY6P03bHJpakdAp-10" target="FKzcfjY6P03bHJpakdAp-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-10" value="Meting selecteren" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="414" y="180" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-13" value="Meting geven" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="414" y="310" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-15" value="profiel aanpassen" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="414" y="560" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-18" value="Metingen lezen" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="414" y="800" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-21" value="beheren data" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="680" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-23" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FKzcfjY6P03bHJpakdAp-22" target="FKzcfjY6P03bHJpakdAp-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-22" value="beheerder" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="720" y="680" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="FKzcfjY6P03bHJpakdAp-25" value="Meetapplicatie" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="140" width="80" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

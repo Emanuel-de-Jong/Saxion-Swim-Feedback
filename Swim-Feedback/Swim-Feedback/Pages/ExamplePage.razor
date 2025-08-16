@@ -1,0 +1,37 @@
+﻿@page "/examplepage/{PageId:int}"
+
+@using Swim_Feedback.Data
+
+<PageTitle>ExamplePage</PageTitle>
+
+<h3>ExamplePage</h3>
+
+<a href="examplepage2">Example Page 2</a>
+
+<p>PageId: @PageId</p>
+
+<p>User: @(user == null ? "none" : user.NormalizedUserName)</p>
+
+<ExampleComponent Text="Component text" />
+
+<div class="mb-3">
+    <label for="exampleName" class="form-label">Name</label>
+    <input type="text" class="form-control" id="exampleName" @bind="exampleName">
+</div>
+<div class="mb-3">
+    <button type="button" class="btn btn-primary" @onclick="SaveExample">Save</button>
+</div>
+
+@if (exampleList == null) {
+    <p>Loading...</p>
+}
+else
+{
+    <h4>Examples:</h4>
+    @foreach (Example example in exampleList)
+    {
+        <div>
+            <p>@example.Name</p>
+        </div>
+    }
+}

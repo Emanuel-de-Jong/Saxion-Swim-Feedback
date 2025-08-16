@@ -1,0 +1,152 @@
+﻿.trans-header.statistics {
+	position: relative;
+}
+
+.trans-header.statistics h1 {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	margin: 0;
+	color: white;
+}
+
+.nav {
+	justify-content: space-between;
+}
+
+.nav > .nav-item {
+	margin: auto;
+	text-align: center;
+}
+
+a.nav-link.active {
+	background: #2283ce !important;
+	color: white !important;
+	border-radius: 0 !important;
+	border-color: #2283ce !important;
+}
+
+a.nav-link {
+	color: black;
+}
+
+.statistics-container {
+	margin-top: 40px;
+	padding: 0;
+}
+
+.filter-container,
+.student-container {
+	background: #f9f9f9;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.filter-header {
+	display: flex;
+	align-items: center;
+	padding: 20px 0 0 0;
+}
+
+.filter-header-container > h3,
+.student-header-container > h3
+{
+	color: black;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.student-info > h3 {
+	color: black;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.filter-header-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+i.fa-solid.fa-eraser {
+	font-size: 25px;
+	color: #2283ce;
+	margin-left: auto;
+	margin-top: -35px;
+}
+
+input.general-filter,
+.form-group > .statistics-subject-dropdown,
+.form-group > .statistics-class-dropdown,
+select.dropdown-primary {
+	margin: 15px 0 15px 0;
+}
+
+select.student-select.dropdown-primary {
+	color: #8e8e8e;
+}
+
+.filter-container > .input-group:first-child {
+	margin-top: 15px;
+}
+
+.filter-button {
+	width: 150px;
+	height: 55px;
+	font-size: 18px;
+	margin-top: 15px;
+	margin-bottom: 60px;
+}
+
+.filter-container > .input-group > input {
+	width: 100%;
+	height: 65px;
+	font-size: 20px;
+	margin: 15px 0 15px 0;
+}
+
+.global-diagram,
+.student-info {
+	height: 100%;
+	border-radius: 10px;
+}
+
+.student-edit {
+	margin: 20px 0 0 0;
+	border-radius: 10px;
+}
+
+.nav-tabs > li > a {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.global-diagram {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+}
+
+.student-edit-btn {
+	width: 150px;
+	height: 55px;
+	font-size: 18px;
+	margin: 10px 0 20px 0;
+}
+
+.statistics-subject-dropdown,
+.statistics-class-dropdown,
+.statistics-start-date,
+.statistics-end-date,
+.student-statistics-class-dropdown,
+.student-statistics-student-dropdown,
+.student-statistics-subject-dropdown 
+{
+	color: #8e8e8e;
+}

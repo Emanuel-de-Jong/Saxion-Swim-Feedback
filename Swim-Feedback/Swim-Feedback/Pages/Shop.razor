@@ -1,0 +1,48 @@
+﻿@page "/shop/{StudentId:long}"
+
+@using Swim_Feedback.Data
+
+<AuthorizeView>
+<Authorized>
+<AuthorizeView Roles="Teacher, Admin">
+<Authorized Context="a">
+    Points: @student?.Points
+
+    @if (accessories == null || student == null)
+    {
+        <p>Loading...</p>
+    }
+    else
+    {
+        @*@foreach (StudentAccessory studentAccessory in student.StudentAccessories)
+    {
+    <div>
+    @studentAccessory.AccessoryId
+    </div>
+    }*@
+
+        @foreach (Accessory accessory in accessories)
+        {
+            @if (accessory.Cost == 0) continue;
+
+            <div style="margin-bottom: 10px; background-color: gray;">
+                <img src="data:image/png;base64,@accessory.Image" style="max-width: 50px">
+                <h3>@accessory.Name</h3>
+                <span>@accessory.Cost punten</span>
+                <button @onclick="() => Buy(accessory)"
+                        disabled="@(student.Points < accessory.Cost || avatar.AvatarAccessories.Any(aa => aa.AccessoryId == accessory.AccessoryId))">
+                    Buy
+                </button>
+            </div>
+        }
+    }
+</Authorized>
+<NotAuthorized Context="a">
+<CNotAuthorized />
+</NotAuthorized>
+</AuthorizeView>
+</Authorized>
+<NotAuthorized>
+<CRedirect URI="login" />
+</NotAuthorized>
+</AuthorizeView>

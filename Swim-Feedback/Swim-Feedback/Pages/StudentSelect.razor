@@ -1,0 +1,70 @@
+﻿@page "/student-select/{SwimClassId:long}/{*EncodedTopic}"
+
+@using Swim_Feedback.Data
+
+<AuthorizeView>
+<Authorized>
+<AuthorizeView Roles="Teacher, Admin">
+<Authorized Context="a">
+                <div class="trans-overlay" id="student-select-back">
+                    <div class="popup-wrapper">
+                        <div class="student-select-back-popup">
+                            <i class="fa-solid fa-xmark" @onclick="ClosePopup"></i>
+                            <h3>Terug naar dashboard</h3>
+                            <EditForm Context="b" EditContext="editContext" OnValidSubmit="@BackToDashboard">
+                                <DataAnnotationsValidator />
+                                @*<ValidationSummary />*@
+
+                                <div class="input-group student-select-back-container">
+
+
+                                    <div class="student-select-back-email">
+                                        <InputText class="input-primary" type="email" placeholder="E-mail" @bind-Value="loginForm.Email" />
+                                    </div>
+                                    <div class="student-select-back-password">
+                                        <InputText class="input-primary" type="password" placeholder="Wachtwoord" @bind-Value="loginForm.Password" />
+                                    </div>
+                                </div>
+
+                                <div class="popup-footer">
+                                    <button type="submit" class="btn btn-primary">Dashboard</button>
+                                </div>
+                            </EditForm>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div class="trans-header statistics">
+                    <a class="btn-secondary" @onclick="OpenPopup"><i class="fa-solid fa-chevron-left"></i> Ga terug</a>
+                    <h1>Kies jouw dier</h1>
+                </div>
+
+                <div class="student-select-container">
+
+                    @if (students == null)
+                    {
+                        <p>Loading...</p>
+                    }
+                    else
+                    {
+                        @foreach (Student student in students)
+                        {
+                            <div class="student-@student.StudentId student-card" @onclick="() => SelectStudent(student.StudentId)">
+                                <img src="data:image/png;base64,@(student.StudentImage.Data)" alt="kiddo" width="150" height="150">
+                                <h3>@student.Name</h3>
+                            </div>
+                        }
+                    }
+                </div>
+
+</Authorized>
+<NotAuthorized Context="a">
+<CNotAuthorized />
+</NotAuthorized>
+</AuthorizeView>
+</Authorized>
+<NotAuthorized>
+<CRedirect URI="login" />
+</NotAuthorized>
+</AuthorizeView>

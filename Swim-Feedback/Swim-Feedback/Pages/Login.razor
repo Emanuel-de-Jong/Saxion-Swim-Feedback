@@ -1,0 +1,49 @@
+﻿@page "/login"
+
+<div class="inlog-div">
+    <div class="trans-overlay" id="request-password-reset" @onclick="ClosePopup">
+        <div class="popup-wrapper">
+            <div class="request-password-reset-popup">
+                <i class="fa-solid fa-xmark"></i>
+                <h3>Wachtwoord vergeten?</h3>
+
+                <p>Vraag bij een admin een nieuw wachtwoord aan.</p>
+
+            </div>
+
+        </div>
+    </div>
+
+    <img src="../assets/imgs/dutch_dolphin_logo_1.png" class="dutch-dolphins-logo-login" />
+
+    <div class="wrapper login-wrapper">
+        <div class="top-text login">
+            <h1>Inloggen</h1>
+            <h3>Vul hier jouw inlog gegevens in.</h3>
+        </div>
+
+
+        <EditForm EditContext="editContext" OnValidSubmit="@LoginUser">
+            <div class="input-group login">
+                <DataAnnotationsValidator />
+                @*<ValidationSummary />*@
+
+                <div class="login-username">
+                    <i class="fa-solid fa-user"></i>
+                    <InputText class="input-primary" type="text" placeholder="E-mail" @bind-Value="loginForm.Email" />
+                </div>
+                <div class="login-password">
+                    <i class="fa-solid fa-lock"></i>
+                    <InputText class="input-primary" type="password" placeholder="Wachtwoord" @bind-Value="loginForm.Password" />
+                </div>
+                <a class="forgot-password" @onclick="OpenPopup">Wachtwoord vergeten?</a>
+            </div>
+
+            <div class="footer-text login">
+                <button type="submit" class="btn btn-primary">Inloggen</button>
+                <a href="/register">Heb je nog geen account?</a>
+            </div>
+        </EditForm>
+    </div>
+    
+</div>

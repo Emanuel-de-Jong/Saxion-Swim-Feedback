@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Swim_Feedback.Pages.AdminDashboard">
+    <Position X="15.5" Y="7.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>IKAIABAAQAAAAACAAAACAAECCAiEAEACiQAgAACAAEA=</HashCode>
+      <FileName>Pages\AdminDashboard.razor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Swim_Feedback.Pages.Dashboard">
+    <Position X="10" Y="7.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>IACAAQCAAABAAQAAAAgAAAASAEiAAAACAAAAAAEAACg=</HashCode>
+      <FileName>Pages\Dashboard.razor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Swim_Feedback.Pages.Feedback">
+    <Position X="40.25" Y="7.25" Width="4.25" />
+    <InheritanceLine Type="Microsoft.AspNetCore.Components.ComponentBase" ManuallyRouted="true">
+      <Path>
+        <Point X="27.25" Y="4.062" />
+        <Point X="27.25" Y="4.493" />
+        <Point X="31.167" Y="4.493" Type="JumpStart" />
+        <Point X="31.333" Y="4.493" Type="JumpEnd" />
+        <Point X="36.042" Y="4.493" Type="JumpStart" />
+        <Point X="36.208" Y="4.493" Type="JumpEnd" />
+        <Point X="42.375" Y="4.493" />
+        <Point X="42.375" Y="7.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAgACAAAAAAAAACAAAAAAACAAgAACACAAA=</HashCode>
+      <FileName>Pages\Feedback.razor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Swim_Feedback.Pages.Index">
+    <Position X="29.75" Y="7.75" Width="3" />
+    <InheritanceLine Type="Microsoft.AspNetCore.Components.ComponentBase" ManuallyRouted="true">
+      <Path>
+        <Point X="27.25" Y="4.062" />
+        <Point X="27.25" Y="4.389" />
+        <Point X="31.25" Y="4.389" />
+        <Point X="31.25" Y="7.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AICIAAAAAAAAAAAgAAAAgAACAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\Index.razor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Swim_Feedback.Pages.LoginFormModel">
+    <Position X="46.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\Login.razor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Swim_Feedback.Pages.Login">
+    <Position X="45.5" Y="7.25" Width="3" />
+    <InheritanceLine Type="Microsoft.AspNetCore.Components.ComponentBase" ManuallyRouted="true">
+      <Path>
+        <Point X="27.25" Y="4.062" />
+        <Point X="27.25" Y="4.399" />
+        <Point X="47" Y="4.399" />
+        <Point X="47" Y="7.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AIAAIBAAAAAQEAAAAAAAAAACAAAAAAABCAAAAAAEAAE=</HashCode>
+      <FileName>Pages\Login.razor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Swim_Feedback.Pages.RegisterFormModel">
+    <Position X="5.75" Y="12" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAIAE=</HashCode>
+      <FileName>Pages\Register.razor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Swim_Feedback.Pages.Register">
+    <Position X="5" Y="7.5" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIABAAAAAQEAAAAAAAAAACAAgAABABCAAAAAAEAAA=</HashCode>
+      <FileName>Pages\Register.razor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Swim_Feedback.Pages.RRegisterModel">
+    <Position X="24.75" Y="17.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAADAAAAAAAAAAgAAIAAAAAAgAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\RRegister.cshtml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Swim_Feedback.Pages.RResetPasswordModel">
+    <Position X="20.5" Y="17.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAADAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\RResetPassword.cshtml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Swim_Feedback.Pages.RSignInModel">
+    <Position X="29" Y="17" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\RSignIn.cshtml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Swim_Feedback.Pages.Statistics">
+    <Position X="20.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\Statistics.razor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Swim_Feedback.Pages.StudentExport">
+    <Position X="25" Y="7.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AIIAAAAAAAAEIAKAAAAAAAECAAgEAAgCCEAAAAAAAAA=</HashCode>
+      <FileName>Pages\StudentExport.razor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Swim_Feedback.Pages.StudentSelect">
+    <Position X="34" Y="7.5" Width="4.25" />
+    <InheritanceLine Type="Microsoft.AspNetCore.Components.ComponentBase" ManuallyRouted="true">
+      <Path>
+        <Point X="27.25" Y="4.062" />
+        <Point X="27.25" Y="4.324" />
+        <Point X="36.125" Y="4.324" />
+        <Point X="36.125" Y="7.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAABCAAAAgAGAAAAAAAAACAAAAAAACCAAAAAAGAAA=</HashCode>
+      <FileName>Pages\StudentSelect.razor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Swim_Feedback.Pages.Thanks">
+    <Position X="22.25" Y="7.75" Width="1.75" />
+    <InheritanceLine Type="Microsoft.AspNetCore.Components.ComponentBase" ManuallyRouted="true">
+      <Path>
+        <Point X="27.25" Y="4.062" />
+        <Point X="27.25" Y="4.39" />
+        <Point X="23.125" Y="4.39" />
+        <Point X="23.125" Y="7.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\Thanks.razor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.AspNetCore.Components.ComponentBase" Collapsed="true">
+    <Position X="26.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.AspNetCore.Mvc.RazorPages.PageModel" Collapsed="true">
+    <Position X="26.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

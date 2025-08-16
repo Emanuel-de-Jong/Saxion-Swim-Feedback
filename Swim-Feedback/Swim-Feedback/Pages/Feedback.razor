@@ -1,0 +1,39 @@
+﻿@page "/feedback/{SwimClassId:long}/{StudentId:long}/{*EncodedTopic}"
+
+<AuthorizeView>
+<Authorized>
+<AuthorizeView Roles="Teacher, Admin">
+<Authorized Context="a">
+
+        <div class="feedback-container">
+                    <div class="trans-header statistics">
+                        <a class="btn-secondary" href="/student-select/@(SwimClassId)/@(EncodedTopic)"><i class="fa-solid fa-chevron-left"></i> Ga terug</a>
+                        <h1>Geef je mening!</h1>
+                    </div>
+
+                    @if (Topic == null)
+                    {
+                        Topic = "de les";
+                    }
+                    <h2>Wat vond je van @(Topic)?</h2>
+
+                    <div class="score-container">
+                        <img src="assets/imgs/scoreImgs/1.png" @onclick="() => SetScore(1)" />
+                        <img src="assets/imgs/scoreImgs/2.png" @onclick="() => SetScore(2)" />
+                        <img src="assets/imgs/scoreImgs/3.png" @onclick="() => SetScore(3)" />
+                        <img src="assets/imgs/scoreImgs/4.png" @onclick="() => SetScore(4)" />
+                        <img src="assets/imgs/scoreImgs/5.png" @onclick="() => SetScore(5)" />
+                    </div>
+
+                    <img class="bar-image" src="assets/imgs/scoreImgs/bar.png" style="width: 1000px" />
+        </div>
+</Authorized>
+<NotAuthorized Context="a">
+<CNotAuthorized />
+</NotAuthorized>
+</AuthorizeView>
+</Authorized>
+<NotAuthorized>
+<CRedirect URI="login" />
+</NotAuthorized>
+</AuthorizeView>

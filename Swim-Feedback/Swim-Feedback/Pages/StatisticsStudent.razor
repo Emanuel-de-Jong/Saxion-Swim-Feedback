@@ -1,0 +1,112 @@
+﻿@page "/statistics-student"
+
+@using Swim_Feedback.Data
+
+<AuthorizeView>
+<Authorized>
+<AuthorizeView Roles="Teacher, Admin">
+<Authorized Context="a">
+                <div class="trans-header statistics">
+                    <div class="button_logo_wrapper">
+                        <a class="btn-secondary" href="/dashboard"><i class="fa-solid fa-chevron-left"></i> Ga terug</a>
+                        <img src="../assets/imgs/dutch_dolphin_logo_1.png" class="dutch_dolphins_header_logo" />
+                    </div>
+
+                    <h1>Statistieken</h1>
+                </div>
+
+                <ul class="nav nav-tabs nav-fill">
+                    <li class="nav-item general-tab">
+                        <a class="nav-link" aria-current="page" href="/statistics">Algemeen</a>
+                    </li>
+                    <li class="nav-item student-tab">
+                        <a class="nav-link active" aria-current="page" href="/statistics-student">Student Gegevens</a>
+                    </li>
+                    @*<li class="nav-item teacher-tab">
+                        <a class="nav-link" href="statistics-teacher">Leraren Dasboard</a>
+                    </li>*@
+                </ul>
+
+                <div class="container statistics-container">
+                    <div class="row">
+                        <div class="col-3 filter-container">
+
+                            <div class="filter-header-container">
+                                <h3>Selecteer Student</h3>
+                            </div>
+                            <i class="fa-solid fa-eraser"></i>
+
+                            <div class="input-group">
+                                <select id="topic-filter" class="dropdown-primary student-statistics-subject-dropdown" @bind="topic">
+                                    <option selected disabled>Selecteer onderwerp</option>
+                                    @if (topics != null)
+                                    {
+                                        @foreach (string t in topics)
+                                        {
+                                            <option id='@t.Replace(" ", "-")'>@t</option>
+                                        }
+                                    }
+                                </select>
+                                <select class="dropdown-primary student-statistics-class-dropdown" @onchange="SwimClassChanged">
+                                    <option disabled selected>Selecteer klas</option>
+                                    @if (swimClasses != null)
+                                    {
+                                        @foreach (SwimClass swimClass in swimClasses)
+                                        {
+                                            <option value="@swimClass.SwimClassId">@swimClass.Name</option>
+                                        }
+                                    }
+                                </select>
+                                <select class="student-select dropdown-primary student-statistics-student-dropdown" aria-label="Student" @bind="studentId">
+                                    <option disabled selected>Student</option>
+                                    @if (students != null)
+                                    {
+                                        @foreach (Student student in students)
+                                        {
+                                            <option value="@student.StudentId">@student.Name</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+
+                            <button class="btn btn-primary filter-button" @onclick="FilterChanged">Filter</button>
+                        </div>
+
+                        <div class="col-9">
+                            <div class="wrapper global-diagram">
+                                <canvas id="student-statistics"></canvas>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    @*<div class="row second-row">
+                        <div class="col-3 student-container">
+
+                            <div class="student-header-container">
+                                <h3>Gegevens Wijzigen</h3>
+                            </div>
+
+                            <button class="btn btn-primary student-edit-btn">Edit</button>
+
+                        </div>
+
+                        <div class="col-9">
+                            <div class="wrapper student-info">
+                                <h3>Student Informatie</h3>
+                            </div>
+                        </div>
+                    </div>*@
+                </div>
+
+</Authorized>
+<NotAuthorized Context="a">
+<CNotAuthorized />
+</NotAuthorized>
+</AuthorizeView>
+</Authorized>
+<NotAuthorized>
+<CRedirect URI="login" />
+</NotAuthorized>
+</AuthorizeView>

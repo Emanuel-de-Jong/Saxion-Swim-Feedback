@@ -1,0 +1,175 @@
+﻿@page "/admin-dashboard/{IsReload:bool?}"
+
+@using Swim_Feedback.Data
+@using Microsoft.AspNetCore.Identity
+
+<AuthorizeView>
+<Authorized>
+<AuthorizeView Roles="Admin">
+<Authorized Context="a">
+                <div class="trans-overlay" id="admin-import-data">
+                    <div class="popup-wrapper">
+                        <div class="admin-import-data-popup">
+                            <i class="fa-solid fa-xmark" @onclick="CloseImportPopup"></i>
+                            
+                            <h3>Import data</h3>
+
+                            <p>
+                                Upload hier je excel bestand met data. <br/>
+                                Zorg ervoor dat je excel de volgende velden bevat:
+                                <table  class="table table-striped student-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                KlantNr
+                                            </th>
+                                            <th>
+                                                Achternaam
+                                            </th>
+                                            <th>
+                                                Tussenvoegsel
+                                            </th>
+                                            <th>
+                                                Voornaam
+                                            </th>
+                                            <th>
+                                                Groep
+                                            </th>
+                                            <th>
+                                                Les
+                                            </th>
+                                            <th>
+                                                Startdatum
+                                            </th>
+                                            <th>
+                                                Begindatum
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </p>
+
+                            <div>
+                                <p>
+                                    Voeg hier je excel bestaand.
+                                    <br/>
+                                    LET OP! Zodra je een bestand toevoegd wordt deze gelijk verwerkt!
+                                </p>
+                                <InputFile OnChange="@ImportFromCSV" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="trans-overlay" id="admin-password-reset">
+                    <div class="popup-wrapper">
+                        <div class="reset-password-popup">
+                            <i class="fa-solid fa-xmark" @onclick="ClosePasswordPopup"></i>
+                                <h3>Geselecteerd: <b>@selectedUser</b></h3>
+                                <CChangePassword User="selectedUser" />
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="trans-header dashboard">
+                    <div class="button_logo_wrapper">
+                        <a class="btn-secondary" href="/dashboard"><i class="fa-solid fa-chevron-left"></i> Terug</a>
+                        <img src="../assets/imgs/dutch_dolphin_logo_1.png" class="dutch_dolphins_header_logo" />
+                    </div>
+                    <h1>Admin Dashboard</h1>
+                    <div class="admin-dashboard-button-group">
+                        <a class="btn btn-danger" href="/student-export">Export data</a>
+                        <a class="btn btn-danger" @onclick="OpenImportPopup">Import data</a>
+
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 user-container">
+                            <div class="container-wrapper wrapper">
+                                <table id="user-table" class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Email</th>
+                                            <th>Leraar</th>
+                                            <th>Admin</th>
+                                            <th>Wachtwoord</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (users != null)
+                                        {
+                                            @foreach (IdentityUser user in users)
+                                            {
+                                                <tr class="user-row-@(selectedUser?.Id == user.Id ? "active" : "")" @onclick="() => SetSelectedUser(user)">
+                                                    <td class="list-group-item">
+                                                        @user.UserName
+                                                    </td>
+
+
+                                                    @foreach (IdentityRole role in roles)
+                                                    {
+                                                        <td class="role-@role.Name role-column">
+                                                            <a style='color: @(userRoles.Any(Ur => Ur.UserId == user.Id && Ur.RoleId == role.Id) ? "green" : "red")'
+                                                            @onclick="() => GiveUserRoleAsync(user, role)">
+                                                                <i class="fa-regular fa-circle-@(userRoles.Any(Ur => Ur.UserId == user.Id && Ur.RoleId == role.Id) ? "check" : "xmark")"></i>
+                                                            </a>
+                                                        </td>
+                                                    }
+
+                                                    <td class="password-column" @onclick="OpenPasswordPopup">
+                                                        <a>
+                                                            <i class="fa-regular fa-pen-to-square"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="col-6 log-container">
+                            <div class="container-wrapper wrapper">
+                                @if (adminLogs != null)
+                                {
+                                    <table id="log-table" class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Datum</th>
+                                                <th>Bericht</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (AdminLog adminLog in adminLogs)
+                                            {
+                                                <tr>
+                                                    <td>@adminLog.Date.ToString("dd-MM-yy HH:mm")</td>
+                                                    <td>@adminLog.Message</td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+           
+
+</Authorized>
+<NotAuthorized Context="a">
+<CNotAuthorized />
+</NotAuthorized>
+</AuthorizeView>
+</Authorized>
+<NotAuthorized>
+<CRedirect URI="login" />
+</NotAuthorized>
+</AuthorizeView>

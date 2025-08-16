@@ -1,0 +1,3 @@
+﻿Authenticatie(ASP.NEt.CoreIdentity)
+Email Service( Admin account kan alleen wachtwoord veranderen)
+AVG Functies's export to excel. import voor excel en csv.

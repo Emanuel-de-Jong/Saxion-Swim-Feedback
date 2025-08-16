@@ -1,0 +1,17 @@
+﻿.thanks-container {
+	text-align: center;
+}
+
+.button-container {
+	margin-top: 10px;
+}
+
+.button-container > a {
+	padding: 15px;
+}
+
+.thanks-container > h2 {
+	margin-top: 20px;
+	font-size: 30px;
+	color: #2283ce;
+}

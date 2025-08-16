@@ -1,0 +1,26 @@
+﻿.score-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+}
+
+.feedback-container > h2 {
+	font-size: 30px;
+	text-align: center;
+	padding-top: 80px;
+	color: #2283ce;
+}
+
+.feedback-container {
+	min-height: 500px;
+}
+
+.bar-image {
+	position: absolute;
+	bottom: 15%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: fit-content;
+}

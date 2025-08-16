@@ -1,0 +1,65 @@
+@using Microsoft.AspNetCore.Components.Web
+@namespace Swim_Feedback.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="~/" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" />
+    
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="Swim-Feedback.styles.css" rel="stylesheet" />
+
+    <link href="css/pages/login.css" rel="stylesheet" />
+    <link href="css/pages/register.css" rel="stylesheet" />
+    <link href="css/pages/dashboard.css" rel="stylesheet" />
+    <link href="css/pages/statistics.css" rel="stylesheet" />
+    <link href="css/pages/student-select.css" rel="stylesheet" />
+    <link href="css/pages/admin-dashboard.css" rel="stylesheet" />
+    <link href="css/pages/student-export.css" rel="stylesheet" />
+    <link href="css/pages/feedback.css" rel="stylesheet" />
+    <link href="css/pages/thanks.css" rel="stylesheet" />
+
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+</head>
+<body>
+    @RenderBody()
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://kit.fontawesome.com/bbdf0efbed.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="_framework/blazor.server.js"></script>
+
+    <script src="js/pages/example-page/example-page.js"></script>
+    <script src="js/pages/avatar-customize.js"></script>
+    <script src="js/pages/admin-dashboard.js"></script>
+    <script src="js/pages/dashboard.js"></script>
+    <script src="js/pages/login.js"></script>
+    <script src="js/pages/register.js"></script>
+    <script src="js/pages/student-select.js"></script>
+    <script src="js/pages/statistics.js"></script>
+    <script src="js/pages/statistics-teacher.js"></script>
+    <script src="js/pages/statistics-student.js"></script>
+</body>
+</html>

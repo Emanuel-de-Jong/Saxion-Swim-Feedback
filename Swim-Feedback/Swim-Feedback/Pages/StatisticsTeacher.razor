@@ -1,0 +1,84 @@
+﻿@page "/statistics-teacher"
+
+@using Swim_Feedback.Data
+
+<AuthorizeView>
+    <Authorized>
+        <AuthorizeView Roles="Teacher, Admin">
+            <Authorized Context="a">
+                <div class="trans-header statistics">
+                    <div class="button_logo_wrapper">
+                        <a class="btn-secondary" href="/dashboard"><i class="fa-solid fa-chevron-left"></i> Ga terug</a>
+                        <img src="../assets/imgs/dutch_dolphin_logo_1.png" class="dutch_dolphins_header_logo" />
+                    </div>
+
+                    <h1>Statistieken</h1>
+                </div>
+
+                <ul class="nav nav-tabs nav-fill">
+                    <li class="nav-item general-tab">
+                        <a class="nav-link" href="/statistics">Algemeen</a>
+                    </li>
+                    <li class="nav-item student-tab">
+                        <a class="nav-link" href="/statistics-student">Student Gegevens</a>
+                    </li>
+                    <li class="nav-item teacher-tab">
+                        <a class="nav-link active" aria-current="page" href="statistics-teacher">Leraren Dasboard</a>
+                    </li>
+                </ul>
+
+                <div class="container statistics-container">
+                    <div class="row">
+                        <div class="col-3 filter-container">
+
+                            <div class="filter-header-container">
+                                <h3>Filters </h3>
+                            </div>
+                            <i class="fa-solid fa-eraser"></i>
+
+                            <div class="input-group">
+                                @if (topics != null)
+                                {
+                                    <select id="topic-filter" class="dropdown-primary statistics-subject-dropdown">
+                                        <option id="None" selected disabled>Selecteer onderwerp</option>
+                                        @foreach (string topic in topics)
+                                        {
+                                            <option id='@topic.Replace(" ", "-")'>@topic</option>
+                                        }
+                                    </select>
+                                }
+                                <select @bind="swimClassId" class="dropdown-primary statistics-class-dropdown">
+                                    <option disabled selected>Selecteer klas</option>
+                                    @if (swimClasses != null)
+                                    {
+
+                                        @foreach (SwimClass swimClass in swimClasses)
+                                        {
+                                            <option value="@swimClass.SwimClassId">@swimClass.Name</option>
+                                        }
+                                    }
+                                </select>
+                                <input type="date" class="input-primary general-filter statistics-start-date" placeholder="Vanaf" />
+                                <input type="date" class="input-primary general-filter statistics-end-date" placeholder="Tot" />
+                            </div>
+
+                            <button class="btn btn-primary filter-button">Filter</button>
+                        </div>
+
+                        <div class="col-9">
+                            <div class="wrapper global-diagram">
+                                <canvas id="statistics"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Authorized>
+            <NotAuthorized Context="a">
+                <CNotAuthorized />
+            </NotAuthorized>
+        </AuthorizeView>
+    </Authorized>
+    <NotAuthorized>
+        <CRedirect URI="login" />
+    </NotAuthorized>
+</AuthorizeView>

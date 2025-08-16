@@ -1,0 +1,58 @@
+﻿@page "/register"
+
+<div class="inlog-div">
+    <div class="trans-overlay" id="terms-and-conditions" @onclick="ClosePopup">
+        <div class="popup-wrapper">
+            <div class="terms-and-conditions-popup">
+                <i class="fa-solid fa-xmark"></i>
+                <TermsAndConditions />
+            </div>
+
+        </div>
+    </div>
+
+
+        <a class="btn-secondary register-back-btn" href="/login"><i class="fa-solid fa-chevron-left"></i> Ga terug</a>
+        <img src="../assets/imgs/dutch_dolphin_logo_1.png" class="dutch-dolphins-logo-register" />
+    
+
+    <div class="wrapper register-wrapper">
+        <div class="top-text register">
+            <h1>Account aanmaken</h1>
+            <h3>Vul onderstaande gegevens in</h3>
+        </div>
+
+        <EditForm EditContext="editContext" OnValidSubmit="@CreateUserAsync">
+            <div class="input-group register">
+                <DataAnnotationsValidator />
+                @*<ValidationSummary />*@
+
+                <div class="register-username">
+                    <i class="fa-solid fa-user"></i>
+                    <InputText class="input-primary" type="text" placeholder="E-mail" @bind-Value="registerForm.Email" />
+                </div>
+                <div class="register-password">
+                    <i class="fa-solid fa-lock"></i>
+                    <InputText class="input-primary" type="password" placeholder="Wachtwoord" @bind-Value="registerForm.Password" />
+                </div>
+                <div class="register-password-confirm">
+                    <i class="fa-solid fa-lock"></i>
+                    <InputText class="input-primary" type="password" placeholder="Wachtwoord bevestigen" @bind-Value="registerForm.ConfirmPassword" />
+                </div>
+                <div class="register-confirm-terms">
+                    <InputCheckbox class="input-checkbox term-conditions" type="checkbox" @bind-Value="registerForm.IsTermsAndConditionsAccepted" />
+                    <p>Ik ga akkoord met de <a class="terms-and-conditions" @onclick=OpenPopup>Algemene voorwarden</a></p>
+                </div>
+            </div>
+            <div class="footer-text register">
+                <button type="submit" class="btn btn-primary">Aanvragen</button>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+
+
+
+
+

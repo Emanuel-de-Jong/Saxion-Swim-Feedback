@@ -1,0 +1,116 @@
+﻿@page "/dashboard"
+
+@using Swim_Feedback.Data
+
+<AuthorizeView>
+<Authorized>
+<AuthorizeView Roles="Teacher, Admin">
+<Authorized Context="a">
+                <div class="trans-header dashboard">
+                    <div class="button_logo_wrapper">
+                        <a class="btn-secondary" href="/login"><i class="fa-solid fa-chevron-left"></i> Uitloggen</a>
+                        <img src="../assets/imgs/dutch_dolphin_logo_1.png" class="dutch_dolphins_header_logo"/>
+                    </div>
+             
+                    <h1>Dashboard</h1>
+
+                    <AuthorizeView Roles="Admin">
+                        <Authorized Context="b">
+                            <a class="btn-secondary admin-dashboard-button" href="/admin-dashboard">Admin Dasboard</a>
+                        </Authorized>
+                    </AuthorizeView>
+                </div>
+
+                <div class="container dashboard-container">
+                    <div class="row">
+                        <div class="container col-6">
+                            <div class="dashboard-statistics-wrapper wrapper">
+                                <div class="statistics-text-icon">
+                                    <h2>Statistieken</h2>
+                                    <a href="/statistics">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
+                                </div>
+
+                                <canvas id="score-chart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="col-6 div-white">
+                            <div class="class-filter-wrapper wrapper">
+                                <div class="class-filter">
+                                    <h2>Klassen filter</h2>
+                                    <h4>Selecter hier de klas en/of het onderwerp dat je wilt bekijken.</h4>
+                                    <div class="container class-filter">
+                                        <div class="input-wrapper class-filter">
+                                            <div class="form-group">
+                                                <select id="topic-filter" class="dropdown-primary subject-dropdown" value="@topic" @onchange="FilterChanged">
+                                                    <option selected disabled>Selecteer onderwerp</option>
+                                                    @if (topics != null) {
+                                                        @foreach (string t in topics)
+                                                        {
+                                                            <option id='@t.Replace(" ", "-")'>@t</option>
+                                                        }
+                                                    }
+                                                </select>
+
+                                                <div class="tooltip">
+                                                    <i class="fa-solid fa-circle-info" id="class-choice-hover" @onclick="ToggleTooltipStatistics"></i>
+
+                                                    <div class="tooltip-text" id="tooltipText-statistics">Houd leeg als je feedback wilt over de hele les.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-wrapper search-button">
+                                            <input type="text" class="input-primary class-filter-class" placeholder="Selecteer klas" />
+                                            <button class=" btn btn-primary filter-class-search" onclick="window.location.href='/statistics'">Zoeken</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="create-feedback">
+                                    <h2>Feedback aanmaken</h2>
+                                    <h4>Selecteer hier van welke klas je feedback wilt ontvangen.</h4>
+                                    <div class="container create-feedback">
+                                        <div class="input-wrapper create-feedback">
+                                            <input type="text" class="input-primary create-feedback-subject" placeholder="Selecteer onderwerp" @bind="feedbackTopic" />
+                                            <div class="tooltip">
+                                                <i class="fa-solid fa-circle-info" id="create-feedback-hover" @onclick="ToggleTooltipFeedback"></i>
+
+                                                <div class="tooltip-text" id="tooltipText-feedback">Houd leeg als je feedback wilt over de hele les.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-wrapper search-button">
+                                            <select @bind="feedbackSwimClassId" class="dropdown-primary class-select-dashboard">
+                                                <option disabled selected>Selecteer klas</option>
+                                                @if (swimClasses != null)
+                                                {
+
+                                                    @foreach (SwimClass swimClass in swimClasses)
+                                                    {
+                                                         <option value="@swimClass.SwimClassId">@swimClass.Name</option>
+                                                    }
+                                                }
+                                            </select>
+                                            <button class="btn btn-primary create-feedback-next" @onclick="CreateFeedback">Verder</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</Authorized>
+<NotAuthorized Context="a">
+<CNotAuthorized />
+</NotAuthorized>
+</AuthorizeView>
+</Authorized>
+<NotAuthorized>
+<CRedirect URI="login" />
+</NotAuthorized>
+</AuthorizeView>
