@@ -12,3 +12,4 @@ In this group project, three software engineer students (including me), two infr
 | ![](/Screenshots/3-Feedback-Grade.png) | ![](/Screenshots/4-Feedback-Thanks.png) |
 | ![](/Screenshots/5-Statistics-General.png) | ![](/Screenshots/6-Admin_Dashboard.png) |
 | ![](/Screenshots/7-Register.png) | ![](/Screenshots/.png) |
+ 
